@@ -69,7 +69,7 @@ public class CardOrderForm extends FormBase {
     private String debt;
 
     @NotBlank
-    @Size(max = 120)
+    @Size(max = 20)
     private String job;
 
     @NotBlank
