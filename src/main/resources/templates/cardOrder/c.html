@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<head>
+    <title>お申し込み情報の確認</title>
+
+    <script src="/assets/js/metrixir.client.js"></script>
+</head>
+<body>
+<div class="full height image" layout:fragment="content">
+    <div class="ui main container">
+        <div class="ui information container">
+            <div class="ui middle center aligned grid">
+                <div class="center column">
+                    <div class="ui segment metrixir">
+                        <h1 class="ui aligned header teal">お申込み情報</h1>
+                        <form action="confirm.php" method="post">
+                            <input type="hidden" name="name" value="<?php echo $name; ?>">
+                            <input type="hidden" name="furigana" value="<?php echo $furigana; ?>">
+                            <input type="hidden" name="email" value="<?php echo $email; ?>">
+                            <input type="hidden" name="tel" value="<?php echo $tel; ?>">
+                            <input type="hidden" name="sex" value="<?php echo $sex; ?>">
+                            <input type="hidden" name="item" value="<?php echo $item; ?>">
+                            <input type="hidden" name="content" value="<?php echo $content; ?>">
+                            <div>
+                                <div>
+                                    <label>お名前(漢字)</label>
+                                    <p><input type="text"name="employerName" th:value="${form.employerName}"></p>
+                                </div>
+                                <!--<div>
+                                    <label>お名前(カナ)</label>
+                                    <p><></p>
+                                </div>
+                                <div>
+                                    <label>メールアドレス</label>
+                                    <p><?php echo $email; ?></p>
+                                </div>
+                                <div>
+                                    <label>電話番号</label>
+                                    <p><?php echo $tel; ?></p>
+                                </div>
+                                <div>
+                                    <label>性別</label>
+                                    <p><?php echo $sex ?></p>
+                                </div>
+                                <div>
+                                    <label>お問い合わせ項目</label>
+                                    <p><?php echo $item; ?></p>
+                                </div>
+                                <div>
+                                    <label>お問い合わせ内容</label>
+                                    <p><?php echo nl2br($content); ?></p>
+                                </div>
+                                -->
+
+                            </div>
+
+
+                        <form class="ui form" method="post" action="/cardOrder/">
+                            <div class="ui comments">
+                                間違いがなければ～<br>
+                            </div>
+
+
+                            <div class="ui column grid">
+                                <div class="eight wide column left aligned">
+                                    <!--/*戻る場合、formの送り先を強制的に書き換える*/-->
+                                    <button class="ui button angle left icon" onclick="form.action='/cardOrder/modify';return true">情報を修正する</button>
+                                </div>
+                                <div class="eight wide column right aligned">
+                                    <button class="ui teal button angle right icon">確認画面へ</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
