@@ -19,64 +19,115 @@
 
                         <form class="ui form" method="post" action="/cardOrder/user">
 
-                            <!-- /*エラーがあれば表示する*/ -->
+                            <!-- /*エラーがあれば表示する*/
                             <ul class="ui red basic label" th:if="${form.hasErrors()}">
-                                <li th:each="error : ${form.getErrors().entrySet()}" th:text="${error.value}"></li>
+                               <li th:each="error : ${form.getErrors().entrySet()}" th:text="${error.value}"></li>
                             </ul>
-
+-->
                             <div class="ui horizontal divider">ご本人について</div>
 
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
                                 <label>お名前（漢字）</label>
                                 <input type="text" name="kanjiName" th:value="${form.kanjiName}" placeholder="山田　太郎"/>
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('kanjiName')}"></font>
+                                </ul>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
                                 <label>お名前（カナ）</label>
                                 <input type="text" name="kanaName" th:value="${form.kanaName}" placeholder="ヤマダ　タロウ"/>
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('kanaName')}"></font>
+                                </ul>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
                                 <label>お名前（ローマ字）</label>
                                 <input type="text" name="alphabetName" th:value="${form.alphabetName}" placeholder="Yamada Tarou"/>
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('alphabetName')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('gender')} ? 'error'">
                                 <label>性別</label>
                                 <input type="radio" name="gender" value="male" th:checked="${form.gender}=='male'"/>男性
                                 <input type="radio" name="gender" value="female" th:checked="${form.gender}=='female'"/>女性
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('gender')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('dateOfBirth')} ? 'error'">
                                 <label>生年月日</label>
                                 <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}" placeholder="2000/01/01"/>
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('dateOfBirth')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
                                 <label>郵便番号</label>
                                 <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}" placeholder="123-4567"/>
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('zipcode')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
                                 <label>ご住所</label>
                                 <input type="text" name="address" th:value="${form.address}" />
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('address')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
                                 <label>自宅電話番号</label>
                                 <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}" placeholder="01-1234-6789"/>
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('homePhoneNumber')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
                                 <label>携帯電話番号</label>
                                 <input type="text" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}" placeholder="090-1234-5678"/>
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('mobilePhoneNumber')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
                                 <label>メールアドレス</label>
                                 <input type="text" name="emailAddress" th:value="${form.emailAddress}"/>
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('emailAddress')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('spouse')} ? 'error'">
                                 <label>配偶者有無</label>
                                 <input type="radio" name="spouse" value="1" th:checked="${form.spouse}=='1'"/>配偶者あり
                                 <input type="radio" name="spouse" value="0" th:checked="${form.spouse}=='0'"/>配偶者なし
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('spouse')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('houseClassification')} ? 'error'">
                                 <label>お住まい</label>
                                 <select name="houseClassification">
 
-                                    <option value="選択開始" th:selected="${form.houseClassification}=='選択開始'">-------- 以下の項目から選択してください --------</option>
+                                    <option value="選択開始">-------- 以下の項目から選択してください --------</option>
 
                                     <option value="自己所有" th:selected="${form.houseClassification}=='自己所有'">本人名義の一戸建・マンション</option>
                                     <option value="家族所有" th:selected="${form.houseClassification}=='家族所有'">家族名義の一戸建・マンション</option>
@@ -99,14 +150,29 @@
                                 <input type="radio" name="houseClassification" value="寮下宿" th:checked="${form.houseClassification}=='寮下宿'"/>寮・下宿
                                 <input type="radio" name="houseClassification" value="その他" th:checked="${form.houseClassification}=='その他'"/>その他
 -->
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('houseClassfication')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('debt')} ? 'error'">
                                 <label>ローン等のお借り入れ金額</label>
                                 <input type="text" class="number" name="debt" th:value="${form.debt}"/><span class="unit">万円</span>
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('debt')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('income')} ? 'error'">
                                 <label>昨年の所得</label>
                                 <input type="text" class="number" name="income" th:value="${form.income}"/><span class="unit">万円</span>
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('income')}"></font>
+                                </ul>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('job')} ? 'error'">
                                 <label>ご職業</label>
@@ -140,6 +206,11 @@
                                     <input type="radio" name="job" value="他有職" th:checked="${form.job}=='他有職'"/>その他 (有職）
                                     <input type="radio" name="job" value="他無職" th:checked="${form.job}=='他無職'"/>その他（無職）
                                     -->
+
+
+                                <ul class="ui red basic" th:if="${form.hasErrors()}">
+                                    <font color="#ff0000" th:text=" ${form.getErrors('job')}"></font>
+                                </ul>
 
                             </div>
 
