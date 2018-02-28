@@ -67,18 +67,18 @@
                             </div>
                             <div>
                                 <label>ローンのお借入金額</label>
-                                <input type="text" name="debt" th:value="${form.debt}"><span class="unit">万円</span>
+                                <input type="text" name="debt" th:value="${form.debt}"> <div align="right"><font size="2">万円</font></div>
                             </div>
                             <div>
                                 <label>昨年の所得</label>
-                                <input type="text" name=income th:value="${form.income}"><span class="unit">万円</span>
+                                <input type="text" name=income th:value="${form.income}"><div align="right"><font size="2">万円</font></div>
                             </div>
                             <div>
                                 <label>ご職業</label>
                                 <input type="text" name="job" th:value="${form.job}">
                             </div>
 
-                            <div th:if="${form.job}!='学生'">
+                            <div th:if="${form.job}=='経営自営' or ${form.job}=='会社員'or ${form.job}=='契約派遣'or ${form.job}=='公務員'or ${form.job}=='民間団体'or ${form.job}=='他有職'">
                                 <div>
                                     <label>お勤め先名</label>
                                     <input type="text" name="employerName" th:value="${form.employerName}">
