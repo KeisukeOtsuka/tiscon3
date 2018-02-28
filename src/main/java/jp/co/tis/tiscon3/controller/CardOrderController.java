@@ -59,6 +59,12 @@ public class CardOrderController {
         return templateEngine.render("cardOrder/job", "form", form);
     }
 
+    public HttpResponse confirmuser(CardOrderForm form) {
+        return templateEngine.render("cardOrder/c", "form", form);
+    }
+
+
+
     /**
      * 本人登録ページに戻ります.
      *
