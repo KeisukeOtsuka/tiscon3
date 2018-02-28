@@ -60,7 +60,7 @@
 
                                 <select name="industryType">
 
-                                    <option value="選択開始" th:selected="${form.industryType}=='選択開始'">-------- 以下の項目から選択してください --------</option>
+                                    <option value="" th:selected="${form.industryType}==''">-------- 以下の項目から選択してください --------</option>
 
                                     <option value="農林水鉱" th:selected="${form.industryType}=='農林水鉱'">農業・林業・水産業・鉱業</option>
                                     <option value="建築不動産" th:selected="${form.industryType}=='建築不動産'">建設・不動産業</option>
@@ -95,7 +95,7 @@
 
                                 <select name="capital">
 
-                                    <option value="選択開始" th:selected="${form.capital}=='選択開始'">-------- 以下の項目から選択してください --------</option>
+                                    <option value="" th:selected="${form.capital}==''">-------- 以下の項目から選択してください --------</option>
 
                                     <option value="999" th:selected="${form.capital}=='999'">１千万円未満</option>
                                     <option value="4999" th:selected="${form.capital}=='4999'">１千万円以上５千万円未満</option>
@@ -120,7 +120,7 @@
 
                                 <select name="companySize">
 
-                                    <option value="選択開始" th:selected="${form.capital}=='選択開始'">-------- 以下の項目から選択してください --------</option>
+                                    <option value="" th:selected="${form.capital}==''">-------- 以下の項目から選択してください --------</option>
 
                                     <option value="9" th:selected="${form.companySize}=='9'">１０名未満</option>
                                     <option value="29" th:selected="${form.companySize}=='29'">１０名以上３０名未満</option>
