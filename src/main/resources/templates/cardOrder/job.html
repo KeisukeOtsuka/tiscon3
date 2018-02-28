@@ -138,6 +138,7 @@
                                 <input type="radio" name="companySize" th:field="${form.companySize}" value="500" th:checked="${form.companySize}=='500'"/>５００名以上
 
                             -->
+                                </select>
                                     <ul class="ui red basic" th:if="${form.hasErrors()}">
                                         <font color="#ff0000" th:text=" ${form.getErrors('companySize')}"></font>
                                     </ul>
