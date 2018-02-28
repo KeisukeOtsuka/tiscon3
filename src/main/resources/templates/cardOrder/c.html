@@ -43,75 +43,78 @@
                             </div>
                             <div>
                                 <label>ご住所</label>
-                                <input type="text" name="address" th:value="${form.address}" >
+                                <input type="text" name="address" th:value="${form.address}">
                             </div>
                             <div>
                                 <label>自宅電話番号</label>
-                                <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}" >
+                                <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}">
                             </div>
                             <div>
                                 <label>携帯電話番号</label>
-                                <input type="text" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}" >
+                                <input type="text" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}">
                             </div>
                             <div>
                                 <label>メールアドレス</label>
-                                <input type="text" name="emailAddress" th:value="${form.emailAddress}" >
+                                <input type="text" name="emailAddress" th:value="${form.emailAddress}">
                             </div>
                             <div>
                                 <label>配偶者有無</label>
-                                <input type="text" name="spouse" th:value="${form.spouse}" >
+                                <input type="text" name="spouse" th:value="${form.spouse}">
                             </div>
                             <div>
                                 <label>お住まい</label>
-                                <input type="text" name="houseClassification" th:value="${form.houseClassification}" >
+                                <input type="text" name="houseClassification" th:value="${form.houseClassification}">
                             </div>
                             <div>
                                 <label>ローンのお借入金額</label>
-                                <input type="text" name="debt" th:value="${form.debt}" ><span class="unit">万円</span>
+                                <input type="text" name="debt" th:value="${form.debt}"><span class="unit">万円</span>
                             </div>
                             <div>
                                 <label>昨年の所得</label>
-                                <input type="text" name=income th:value="${form.income}" ><span class="unit">万円</span>
+                                <input type="text" name=income th:value="${form.income}"><span class="unit">万円</span>
                             </div>
                             <div>
                                 <label>ご職業</label>
-                                <input type="text" name="job" th:value="${form.job}" >
+                                <input type="text" name="job" th:value="${form.job}">
                             </div>
-                            <div>
-                                <label>お勤め先名</label>
-                                <input type="text" name="employerName" th:value="${form.employerName}" >
-                            </div>
-                            <div>
-                                <label>お勤め先名郵便番号</label>
-                                <input type="text" name="employerZipCode" th:value="${form.employerZipCode}" >
-                            </div>
-                            <div>
-                                <label>お勤め先住所</label>
-                                <input type="text" name="employerAddress" th:value="${form.employerAddress}" >
-                            </div>
-                            <div>
-                                <label>業種</label>
-                                <input type="text" name="industryType" th:value="${form.industryType}" >
-                            </div>
-                            <div>
-                                <label>資本金</label>
-                                <input type="text" name="capital" th:value="${form.capital}" >
-                            </div>
-                            <div>
-                                <label>お勤め先の規模(従業員数)</label>
-                                <input type="text" name="companySize" th:value="${form.companySize}" >
-                            </div>
-                            <div>
-                                <label>部署</label>
-                                <input type="text" name="department" th:value="${form.department}" >
-                            </div>
-                            <div>
-                                <label>役職</label>
-                                <input type="text" name="position" th:value="${form.position}" >
-                            </div>
-                            <div>
-                                <label>勤続年数</label>
-                                <input type="text" name="employeeLength" th:value="${form.employeeLength}" />
+
+                            <div th:if="{${form.job}!='学生' || ${form.job}!='主婦'}||${form.job}!='年金受給者の方'||${form.job}!='パート・アルバイト'||${form.job}!='その他(無職)'">
+                                <div>
+                                    <label>お勤め先名</label>
+                                    <input type="text" name="employerName" th:value="${form.employerName}">
+                                </div>
+                                <div>
+                                    <label>お勤め先名郵便番号</label>
+                                    <input type="text" name="employerZipCode" th:value="${form.employerZipCode}">
+                                </div>
+                                <div>
+                                    <label>お勤め先住所</label>
+                                    <input type="text" name="employerAddress" th:value="${form.employerAddress}">
+                                </div>
+                                <div>
+                                    <label>業種</label>
+                                    <input type="text" name="industryType" th:value="${form.industryType}">
+                                </div>
+                                <div>
+                                    <label>資本金</label>
+                                    <input type="text" name="capital" th:value="${form.capital}">
+                                </div>
+                                <div>
+                                    <label>お勤め先の規模(従業員数)</label>
+                                    <input type="text" name="companySize" th:value="${form.companySize}">
+                                </div>
+                                <div>
+                                    <label>部署</label>
+                                    <input type="text" name="department" th:value="${form.department}">
+                                </div>
+                                <div>
+                                    <label>役職</label>
+                                    <input type="text" name="position" th:value="${form.position}">
+                                </div>
+                                <div>
+                                    <label>勤続年数</label>
+                                    <input type="text" name="employeeLength" th:value="${form.employeeLength}"/>
+                                </div>
                             </div>
 
                             <div class="ui column grid">
