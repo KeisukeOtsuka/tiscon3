@@ -19,7 +19,7 @@
 
                             <div>
                                 <label>お名前(漢字)</label>
-                                <input type="text" name="kanjiname" th:value="${form.kanjiName}">
+                                <input type="text" name="kanjiName" th:value="${form.kanjiName}">
                             </div>
                             <div>
                                 <label>お名前(カナ)</label>
@@ -49,6 +49,35 @@
                                 <label>自宅電話番号</label>
                                 <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}" >
                             </div>
+                            <div>
+                                <label>自宅電話番号</label>
+                                <input type="text" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}" >
+                            </div>
+                            <div>
+                                <label>メールアドレス</label>
+                                <input type="text" name="emailAddress" th:value="${form.emailAddress}" >
+                            </div>
+                            <div>
+                                <label>配偶者有無</label>
+                                <input type="text" name="spouse" th:value="${form.spouse}" >
+                            </div>
+                            <div>
+                                <label>お住まい</label>
+                                <input type="text" name="houseClassification" th:value="${form.houseClassification}" >
+                            </div>
+                            <div>
+                                <label>ローンのお借入金額</label>
+                                <input type="text" name="debt" th:value="${form.debt}" ><span class="unit">万円</span>
+                            </div>
+                            <div>
+                                <label>昨年の所得</label>
+                                <input type="text" name=income th:value="${form.income}" ><span class="unit">万円</span>
+                            </div>
+                            <div>
+                                <label>ご職業</label>
+                                <input type="text" name="job" th:value="${form.job}" >
+                            </div>
+
 
 
                             <div class="ui column grid">
