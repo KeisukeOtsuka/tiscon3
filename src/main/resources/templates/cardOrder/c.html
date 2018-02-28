@@ -78,7 +78,7 @@
                                 <input type="text" name="job" th:value="${form.job}">
                             </div>
 
-                            <div th:if="{${form.job}!='学生' || ${form.job}!='主婦'}||${form.job}!='年金受給者の方'||${form.job}!='パート・アルバイト'||${form.job}!='その他(無職)'">
+                            <div th:if="${form.job}!='学生'">
                                 <div>
                                     <label>お勤め先名</label>
                                     <input type="text" name="employerName" th:value="${form.employerName}">
