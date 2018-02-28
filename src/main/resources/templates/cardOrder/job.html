@@ -30,27 +30,27 @@
 
                             <div class="field" th:classappend="${form.hasErrors('employerName')} ? 'error'">
                                 <label>お勤め先名</label>
-                                <input type="text" name="employerName" th:value="${form.employerName}"/>
+                                <input type="text" name="employerName" th:value="${form.employerName}" placeholder="TIS"/>
                                 <ul class="ui red basic" th:if="${form.hasErrors()}">
                                     <font color="#ff0000" th:text=" ${form.getErrors('employerName')}"></font>
                                 </ul>                            </div>
                             <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
                                 <label>お勤め先郵便番号</label>
-                                <input type="text" name="employerZipCode" th:value="${form.employerZipCode}"/>
+                                <input type="text" name="employerZipCode" th:value="${form.employerZipCode}" placeholder="160-0023"/>
                                 <ul class="ui red basic" th:if="${form.hasErrors()}">
                                     <font color="#ff0000" th:text=" ${form.getErrors('employerZipCode')}"></font>
                                 </ul>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
                                 <label>お勤め先住所</label>
-                                <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
+                                <input type="text" name="employerAddress" th:value="${form.employerAddress}" placeholder="東京都新宿区西新宿8丁目17番1号住友不動産新宿グランドタワー"/>
                                 <ul class="ui red basic" th:if="${form.hasErrors()}">
                                     <font color="#ff0000" th:text=" ${form.getErrors('employerAddress')}"></font>
                                 </ul>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
                                 <label>お勤め先電話番号</label>
-                                <input type="text" name="employerPhoneNumber" th:value="${form.employerPhoneNumber}"/>
+                                <input type="text" name="employerPhoneNumber" th:value="${form.employerPhoneNumber}" placeholder="03-5337-7070"/>
                                 <ul class="ui red basic" th:if="${form.hasErrors()}">
                                     <font color="#ff0000" th:text=" ${form.getErrors('employerPhoneNumber')}"></font>
                                 </ul>
@@ -145,21 +145,21 @@
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('department')} ? 'error'">
                                 <label>所属部署</label>
-                                <input type="text" name="department" th:value="${form.department}"/>
+                                <input type="text" name="department" th:value="${form.department}" placeholder="人事部"/>
                                 <ul class="ui red basic" th:if="${form.hasErrors()}">
                                     <font color="#ff0000" th:text=" ${form.getErrors('department')}"></font>
                                 </ul>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('position')} ? 'error'">
                                 <label>役職</label>
-                                <input type="text" name="position" th:value="${form.position}"/>
+                                <input type="text" name="position" th:value="${form.position}" placeholder="新卒採用"/>
                                 <ul class="ui red basic" th:if="${form.hasErrors()}">
                                     <font color="#ff0000" th:text=" ${form.getErrors('position')}"></font>
                                 </ul>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employeeLength')} ? 'error'">
                                 <label>勤続年数</label>
-                                <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"/><span class="unit">年</span >
+                                <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}" placeholder="10"/><span class="unit">年</span >
                                 <ul class="ui red basic" th:if="${form.hasErrors()}">
                                     <font color="#ff0000" th:text=" ${form.getErrors('employeeLength')}"></font>
                                 </ul>
